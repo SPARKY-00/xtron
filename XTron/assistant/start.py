@@ -9,13 +9,10 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 btn = [
       [
-      Button.url("🤖 OWNER 🤖", "https://t.me/SPA4KY")
+      Button.url("❕ Owner ❕, "https://t.me/SPA4KY")
       ],
       [
-      Button.inline("⚙ Bot Help ⚙", data="help")
-      ],
-      [
-      Button.inline("⚙ Accounts Help ⚙", data="help")
+      Button.inline("❔ Bot Help ❔", data="help")
       ],
       ]
 
@@ -116,9 +113,9 @@ async def start_all(event):
       chat = event.chat_id
       firstname = replied_user.user.first_name
       id = replied_user.user.id
-      start_owner = f"**Hello [{firstname}](tg://user?id={id}) My master !!**\n I'm Spam Your Spam assistant Bot You can Control Your Spam userbots using me \n\n __Send /help or !help for more info__"
-      start_sudo = f"**Hello [{firstname}](tg://user?id={id}) Sudo !!** \n I'm {bot_name} A Spam Assistant bot \n\n __Send /help or !help for more info__"
-      start_users = f"**Hello [{firstname}](tg://user?id={id}) !!** \n I'm {bot_name} A Spam Assistant bot Assistant bot \n\n __click Below Buttons for more info__"
+      start_owner = f"**Hello [{firstname}](tg://user?id={id})**\n\n I am Your Bot XTron, You can Control Your userbots using me. \n\n Send /help or !help for more info."
+      start_sudo = f"**Hello [{firstname}](tg://user?id={id})** \n\n I am {bot_name} XTron bot. \n\n Send /help or !help for more info."
+      start_users = f"**Hello [{firstname}](tg://user?id={id}) !!** \n\n I am {bot_name} XTron bot. \n\n Click Below Buttons for more info."
       if event.sender_id == OWNER_ID or event.sender_id in DEV:
           await Tron.send_message(chat, start_owner, buttons=btn)
       elif event.sender_id in SUDO_USERS:
@@ -181,11 +178,11 @@ RIZ_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/ba87c58f01a6fcb5e
 @Tron.on(events.NewMessage(pattern="[!/]ping"))
 async def Botping(e):
    if e.sender_id in SUDO_USERS or e.sender_id in DEV:
-        fuk = await e.reply("Pong!!.....")
+        fuk = await e.reply("**Pong!!.....**")
         start = datetime.now()
         end = datetime.now()
         ms = (end-start).microseconds / 1000              
-        pingop = f"x XTron Assistant  x\n\n Time: `{ms}` ᴍs \n Version: {rizoelversion}" 
+        pingop = f"**x XTron Assistant  x**\n\n **Time:** `{ms}` ms \n **Version:** {rizoelversion}" 
         await fuk.edit(pingop)
         
 
@@ -276,7 +273,7 @@ async def alive(event):
            if STRING40:
               ids += 1 
            Caption = f"**XTron is Alive..!💞** \n\n"
-           Caption += f"============================="
+           Caption += f"============================= \n"
            Caption += f"• **XTron Version:** `{rizoelversion}` \n"
            Caption += f"• **Python Version:** `3.10.4` \n"
            Caption += f"• **Telethon Version:** `{version.__version__}` \n"
@@ -288,14 +285,14 @@ async def alive(event):
                                 caption=Caption, 
                                 buttons=[
            [
-           Button.url("• CHANNEL •", "https://t.me/Cute_chatters"),
-           Button.url("• OWNER •", "https://t.me/SPA4KY")
+           Button.url("✘ CHANNEL ✘", "https://t.me/Rst_Bots"),
+           Button.url("✘ OWNER ✘", "https://t.me/SPA4KY")
            ], 
            ], 
            )        
         except Exception as ex:
            Caption = f"**XTron Is Alive..!💞** \n\n"
-           Caption += f"============================="
+           Caption += f"============================= \n"
            Caption += f"• **XTron Version:** `{rizoelversion}` \n"
            Caption += f"• **Python Version:** `3.10.4` \n"
            Caption += f"• **Telethon Version:** `{version.__version__}` \n"
@@ -306,8 +303,8 @@ async def alive(event):
                                 caption=Caption, 
                                 buttons=[
            [
-           Button.url("• CHANNEL •", "https://t.me/cute_chatters"),
-           Button.url("• OWNER •", "https://t.me/SPA4KY")
+           Button.url("✘ CHANNEL ✘", "https://t.me/Rst_Bots"),
+           Button.url("✘ OWNER ✘", "https://t.me/SPA4KY")
            ], 
            ], 
            )
@@ -326,4 +323,3 @@ async def restart(event):
     
   if event.sender_id in SUDO_USERS:
         await event.reply("**Sorry !! You can't Use this Command, Only Owner and Full Sudo Users can use.**")
-       
