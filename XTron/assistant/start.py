@@ -9,7 +9,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 btn = [
       [
-      Button.url("❕ Owner ❕, "https://t.me/SPA4KY")
+      Button.url("❕ Owner ❕", "https://t.me/SPA4KY")
       ],
       [
       Button.inline("❔ Bot Help ❔", data="help")
