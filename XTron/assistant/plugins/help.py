@@ -6,9 +6,10 @@ Riz_Help = " • Help menu Of XTron • \n\n __Basic Cmds__ \n `/ping` \n `/aliv
 @Tron.on(events.NewMessage(pattern="[!/]help"))
 async def bot_help(event):
    if event.sender_id in SUDO_USERS or event.sender_id in DEV:
-       await Tron.send_message(event.chat_id,
-                                  Riz_Help,
-                                  buttons=[
+       await Tron.send_file(event.chat_id, 
+                                HELP_PIC, 
+                                caption=Riz_Help, 
+                                buttons=[
            [
            Button.url("• SUPPORT •", "https://t.me/cute_chatters"),
            Button.url("• OWNER •", "https://t.me/spa4ky")
