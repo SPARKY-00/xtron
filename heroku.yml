@@ -1,5 +1,5 @@
 build:
   docker:
-      RiZoeL: Dockerfile
+      Tron: Dockerfile
 run:
-   RiZoeL: python3 -m RiZoeLXSpam
+   Tron: python3 -m XTron
